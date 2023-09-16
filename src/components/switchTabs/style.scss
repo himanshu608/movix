@@ -13,7 +13,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100px;
+            width: 90px;
             color: var(--black);
             font-size: 14px;
             position: relative;
@@ -26,7 +26,7 @@
         }
         .movingBg {
             height: 30px;
-            width: 100px;
+            width: 90px;
             border-radius: 15px;
             background-image: var(--gradient);
             position: absolute;

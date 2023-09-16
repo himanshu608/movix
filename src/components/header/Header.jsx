@@ -48,9 +48,10 @@ const Header = () => {
     const searchQueryHandle = (event)=>{
       if(event.key === "Enter" && query.length > 0){
           navigate(`/search/${query}`);
+          setQuery("");
           setTimeout(()=>{
             setShowSearch(false);
-          },1000)
+          },100)
       }
     }
 
@@ -84,6 +85,7 @@ const Header = () => {
             <ContentWrapper>
             <div className="searchInput">
                         <input type="text" 
+                        autoFocus
                         placeholder='Search for movies and TV show...'
                         value={query}
                         onChange={(e)=> setQuery(e.target.value)}

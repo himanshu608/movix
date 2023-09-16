@@ -16,7 +16,7 @@ const HeroBanner = () => {
 
 
     const searchQueryHandle = (event)=>{
-        if(event.key === "Enter" && query.length > 0){
+        if((event.key === "Enter" || event.type === "click") && query.length > 0){
             navigate(`/search/${query}`)
         }
     }
@@ -43,12 +43,13 @@ const HeroBanner = () => {
                     </span>
                     <div className="searchInput">
                         <input type="text" 
+                        autoFocus
                         placeholder='Search for movies and TV show...'
                         value={query}
                         onChange={(e)=> setquery(e.target.value)}
                         onKeyUp={searchQueryHandle}
                         />
-                        <button>Search</button>
+                        <button onClick={searchQueryHandle}>Search</button>
                     </div>
             </div>
         </ContentWrapper>

@@ -69,7 +69,7 @@ const fetchNextPageData = ()=>{
               </InfiniteScroll>
             </>
           ) :(
-            <span className="resultsNotFound">
+            <span className="resultsNotFound" style={{color:"wheat"}}>
               Sorry, results not found...
             </span>
           )}
