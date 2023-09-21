@@ -43,7 +43,6 @@ const HeroBanner = () => {
                     </span>
                     <div className="searchInput">
                         <input type="text" 
-                        autoFocus
                         placeholder='Search for movies and TV show...'
                         value={query}
                         onChange={(e)=> setquery(e.target.value)}

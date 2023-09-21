@@ -46,12 +46,12 @@ const Header = () => {
     }
 
     const searchQueryHandle = (event)=>{
-      if((event.key === "Enter" || event.keyCode === 13)&& query.length > 0){
+      if((event.key === "Enter" || event.keyCode === 13 || event.type === "submit")&& query.length > 0){
           navigate(`/search/${query}`);
           setQuery("");
           setTimeout(()=>{
             setShowSearch(false);
-          },100)
+          },10)
       }
     }
 
@@ -84,8 +84,7 @@ const Header = () => {
           {showSearch && <div className="searchBar">
             <ContentWrapper>
             <div className="searchInput">
-                        <input type="text" 
-                        autoFocus
+                        <input type="submit" 
                         placeholder='Search for movies and TV show...'
                         value={query}
                         onChange={(e)=> setQuery(e.target.value)}
