@@ -46,7 +46,7 @@ const Header = () => {
     }
 
     const searchQueryHandle = (event)=>{
-      if(event.key === "Enter" && query.length > 0){
+      if((event.key === "Enter" || event.keyCode === 13)&& query.length > 0){
           navigate(`/search/${query}`);
           setQuery("");
           setTimeout(()=>{
