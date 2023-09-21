@@ -84,7 +84,7 @@ const Header = () => {
           {showSearch && <div className="searchBar">
             <ContentWrapper>
             <div className="searchInput">
-                        <input type="submit" 
+                        <input type="text" 
                         placeholder='Search for movies and TV show...'
                         value={query}
                         onChange={(e)=> setQuery(e.target.value)}
