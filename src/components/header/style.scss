@@ -21,6 +21,10 @@
         transform: translateY(-60px);
     }
 
+    .searchForm{
+        position: relative;
+        width: inherit;
+    }
     .contentWrapper {
         display: flex;
         align-items: center;

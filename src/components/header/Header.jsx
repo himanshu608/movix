@@ -46,13 +46,10 @@ const Header = () => {
     }
 
     const searchQueryHandle = (event)=>{
-      if((event.key === "Enter" || event.keyCode === 13 || event.type === "submit")&& query.length > 0){
-          navigate(`/search/${query}`);
-          setQuery("");
-          setTimeout(()=>{
-            setShowSearch(false);
-          },10)
-      }
+        event.preventDefault();
+        navigate(`/search/${query}`);
+        setQuery("");
+          setShowSearch(false);
     }
 
     const navigationHandler = (type)=>{
@@ -83,15 +80,17 @@ const Header = () => {
           </ContentWrapper>
           {showSearch && <div className="searchBar">
             <ContentWrapper>
-            <div className="searchInput">
-                        <input type="submit" 
+                    <form onSubmit={searchQueryHandle} className="searchForm">
+                    <div className="searchInput">
+                        <input type="text" 
                         placeholder='Search for movies and TV show...'
                         value={query}
                         onChange={(e)=> setQuery(e.target.value)}
-                        onKeyUp={searchQueryHandle}
                         />
+
                       <VscChromeClose onClick={()=>setShowSearch(false)}/>
                     </div>
+                    </form>
             </ContentWrapper>
           </div>}
         </header>
